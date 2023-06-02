@@ -1,19 +1,17 @@
 import React from "react";
 import { GET_USERS, FETCH_ERROR } from "./reducersTypes";
-export const initState = [
-  {
-    users: [],
-    loading: true,
-    error: null,
-  },
-];
-const Reducer = (state, action) => {
+export const initState = {
+  data: [],
+  loading: true,
+  error: null,
+};
+
+const Reducer = (state = initState, action) => {
   switch (action.type) {
     case GET_USERS:
       return {
         ...state,
-        users: action.payload,
-        loading: false,
+        data: action.payload,
       };
     // case FETCH_ERROR:
     //   return {
