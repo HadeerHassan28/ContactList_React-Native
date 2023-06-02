@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { SafeAreaView, View } from "react-native";
 import { DataContext } from "../Context/DataContextProvider";
 import { styles } from "./ContactListStyle";
@@ -16,20 +16,26 @@ import routes from "../common/routes";
 const ContactList = () => {
   const { state } = useContext(DataContext);
   const { data } = state;
-  const [searchTerm, setSearchTerm] = useState("");
   const { navigate } = useNavigation();
+  const [inputName, setInputName] = useState("");
+  const [filteredData, setFilteredData] = useState(data);
   // console.warn(state); //? Done
   //const { data } = useContext(DataContext);
   //console.warn(data); //? done
 
-  // const filteredData = data.filter((item) =>
-  //   item.name.toLowerCase().includes(searchTerm.toLowerCase())
-  // );
-
   const handleChange = (text) => {
-    setSearchTerm(text);
+    setInputName(text);
   };
 
+  useEffect(() => {
+    const filteredContacts = data.filter((item) =>
+      item.name.toLowerCase().includes(inputName.toLowerCase())
+    );
+    // console.warn(filteredContacts);
+    setFilteredData(filteredContacts);
+  }, [inputName, data]);
+
+  //console.warn(filteredData);
   return (
     <NativeBaseProvider>
       <SafeAreaView style={styles.container}>
@@ -40,12 +46,13 @@ const ContactList = () => {
           variant="underlined"
           color={"#C0C0C0"}
           size="2xl"
-          onChangeText={() => handleChange}
-          value="Enter a name"
+          onChangeText={handleChange}
+          value={inputName}
           editable
+          placeholder="Enter a name"
         />
         <FlatList
-          data={data}
+          data={filteredData}
           keyExtractor={({ id }) => id}
           renderItem={({ item }) => (
             <View style={styles.nameArrow}>

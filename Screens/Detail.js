@@ -28,9 +28,16 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 30,
-
+    borderColor: "#ff1493",
+    borderWidth: 2,
+    borderRadius: 20,
     color: "#C0C0C0",
     paddingBottom: 30,
+    paddingTop: 20,
+    marginBottom: 20,
+    justifyContent: "center",
+    textAlign: "center",
+    alignContent: "center",
   },
 });
 
