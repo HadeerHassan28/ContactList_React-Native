@@ -21,6 +21,7 @@ const ContactList = () => {
   // console.warn(state); //? Done
   //const { data } = useContext(DataContext);
   //console.warn(data); //? done
+
   // const filteredData = data.filter((item) =>
   //   item.name.toLowerCase().includes(searchTerm.toLowerCase())
   // );
@@ -37,10 +38,11 @@ const ContactList = () => {
         </Text>
         <Input
           variant="underlined"
-          placeholder="Enter a name"
           color={"#C0C0C0"}
           size="2xl"
           onChangeText={() => handleChange}
+          value="Enter a name"
+          editable
         />
         <FlatList
           data={data}

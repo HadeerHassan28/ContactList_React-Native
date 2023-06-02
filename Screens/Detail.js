@@ -3,15 +3,35 @@ import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 
 const Detail = ({ route }) => {
-  const { name } = route.params;
-  console.warn(name);
+  const { name, email, phone } = route.params;
+  //console.warn(name);
   return (
-    <View>
-      <Text>{name}</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}> Contact Info</Text>
+      <Text style={styles.text}> Name: {name}</Text>
+      <Text style={styles.text}> E-mail: {email}</Text>
+      <Text style={styles.text}> Phone: {phone}</Text>
     </View>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "black",
+  },
+  title: {
+    fontSize: 40,
+    fontWeight: "bold",
+    color: "#ff1493",
+    paddingBottom: 30,
+  },
+  text: {
+    fontSize: 30,
+
+    color: "#C0C0C0",
+    paddingBottom: 30,
+  },
+});
 
 export default Detail;

@@ -21,5 +21,6 @@ export const styles = StyleSheet.create({
   },
   arrow: {
     paddingHorizontal: 300,
+    paddingTop: 25,
   },
 });
