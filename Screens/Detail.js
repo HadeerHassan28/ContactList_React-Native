@@ -1,10 +1,13 @@
+import useAxios from "axios-hooks";
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 
-const Detail = () => {
+const Detail = ({ route }) => {
+  const { name } = route.params;
+  console.warn(name);
   return (
     <View>
-      <Text>Detail</Text>
+      <Text>{name}</Text>
     </View>
   );
 };

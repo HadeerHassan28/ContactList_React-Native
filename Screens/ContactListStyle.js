@@ -6,16 +6,20 @@ export const styles = StyleSheet.create({
     backgroundColor: "black",
   },
   text: {
-    padding: 16,
+    paddingVertical: 5,
+    textAlignVertical: "center",
   },
   line: {
     height: 1,
     backgroundColor: "gray",
-    marginHorizontal: 10,
+    marginHorizontal: 5,
   },
   nameArrow: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+  },
+  arrow: {
+    paddingHorizontal: 300,
   },
 });
