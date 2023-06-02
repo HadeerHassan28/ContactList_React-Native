@@ -13,4 +13,9 @@ export const styles = StyleSheet.create({
     backgroundColor: "gray",
     marginHorizontal: 10,
   },
+  nameArrow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
 });
