@@ -14,7 +14,7 @@ const DataContextProvider = ({ children }) => {
   const [{ loading, error, data }] = useAxios({
     url: "http://localhost:3000/users",
   });
-  // console.warn(data); //?Done
+  //console.warn(data); //?Done
   useEffect(() => {
     dispatch({ type: GET_USERS, payload: data });
   }, []);

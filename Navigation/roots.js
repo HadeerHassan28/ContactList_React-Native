@@ -15,6 +15,10 @@ const Root = () => {
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "black",
+  },
+});
 
 export default Root;
